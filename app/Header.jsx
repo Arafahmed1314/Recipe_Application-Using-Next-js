@@ -6,7 +6,7 @@ import SearchIcon from "./components/svgIcon/SearchIcon";
 
 function Header() {
   return (
-    <header className="container w-full mx-auto px-4 py-4 shadow-lg fixed top-0 bg-white z-50">
+    <header className="w-full mx-auto px-6 py-5 shadow-lg fixed top-0 bg-white z-50">
       <nav className="flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold">
           <Image
@@ -29,7 +29,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/latest-recipe" className="hover:text-orange-500">
+            <Link href="/latest-recipe/1" className="hover:text-orange-500">
               Latest Recipes
             </Link>
           </li>

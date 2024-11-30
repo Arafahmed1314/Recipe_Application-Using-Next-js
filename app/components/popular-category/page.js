@@ -17,18 +17,20 @@ function PopularCategory() {
             </div>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
                 {popularCategories.map((item, index) => (
-                    <div key={index} className="cursor-pointer text-center group">
-                        <div className="overflow-hidden rounded-full mb-2 w-20 h-20 mx-auto">
-                            <Image
-                                src={`/assets${item.image}`}  // Use the correct path for category image
-                                alt={item.name}
-                                width={80}
-                                height={80}
-                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                            />
+                    <Link key={item.id} href={`/Blog/${item.id}`} >
+                        <div className="cursor-pointer text-center group">
+                            <div className="overflow-hidden rounded-full mb-2 w-20 h-20 mx-auto">
+                                <Image
+                                    src={`/assets${item.image}`}  // Use the correct path for category image
+                                    alt={item.name}
+                                    width={80}
+                                    height={80}
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                />
+                            </div>
+                            <p className="transition-transform duration-300 group-hover:scale-105">{item.name}</p>
                         </div>
-                        <p className="transition-transform duration-300 group-hover:scale-105">{item.name}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>

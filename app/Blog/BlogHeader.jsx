@@ -1,29 +1,28 @@
 import Image from "next/image";
-
 import ActionButton from "./ActionButton";
-function BlogHeader() {
+import data from "../../public/data/recipes.json";
+function BlogHeader({ id }) {
+  const recipe = data.find((recipe) => recipe.category_id === id);
   return (
     <>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">
-        A full guide for a better and smarter cooking
-      </h1>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">{recipe.title}</h1>
       <div class="flex items-center space-x-4 mb-6">
         <Image
-          src="/assets/avater.png"
+          src={`/assets/thumbs/${recipe.thumbnail}`}
           alt="Author"
           height={800}
           width={400}
           class="w-8 h-8 rounded-full"
         />
-        <span class="text-gray-600">Tricia Albert</span>
+        <span class="text-gray-600">{recipe.author}</span>
         <span class="text-gray-400">|</span>
-        <span class="text-gray-600">15 mins</span>
+        <span class="text-gray-600">{recipe.cooking_time}</span>
         <span class="text-gray-400">|</span>
-        <span class="text-gray-600">12 Nov 2021</span>
+        <span class="text-gray-600">{recipe.published_date}</span>
       </div>
       <ActionButton />
       <Image
-        src="/assets/single-banner.jpg"
+        src={`/assets/thumbs/${recipe.thumbnail}`}
         height={800}
         width={400}
         alt="Cooking Image"
