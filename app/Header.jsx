@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchIcon from "./components/svgIcon/SearchIcon";
+import CustomLink from "./components/customlink/CustomLink";
 
 function Header() {
   return (
@@ -19,19 +20,19 @@ function Header() {
         </Link>
         <ul className="hidden md:flex space-x-6">
           <li>
-            <Link href="/" className="hover:text-orange-500">
-              Home
-            </Link>
+            <CustomLink path="/">Home</CustomLink>
           </li>
           <li>
-            <Link href="/category" className="hover:text-orange-500">
+            <CustomLink path="/category">Categories</CustomLink>
+            {/* <Link href="/category" className="hover:text-orange-500">
               Categories
-            </Link>
+            </Link> */}
           </li>
           <li>
-            <Link href="/latest-recipe/1" className="hover:text-orange-500">
+            <CustomLink path="/latest-recipe/1">Latest Recipes</CustomLink>
+            {/* <Link href="/latest-recipe/1" className="hover:text-orange-500">
               Latest Recipes
-            </Link>
+            </Link> */}
           </li>
         </ul>
         <div className="flex items-center space-x-4">

@@ -6,7 +6,11 @@ import Link from "next/link";
 function Hero() {
   let randomIndex = Math.floor(Math.random() * data.length);
   let randomRecipe = data[randomIndex];
-
+  const { title, description } = randomRecipe;
+  const snippet =
+    description.split(" ").length > 50
+      ? description.split(" ").slice(0, 50).join(" ") + "..."
+      : description;
   return (
     <section className="mb-16 bg-orange-50">
       <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -20,8 +24,8 @@ function Hero() {
           />
         </div>
         <div>
-          <h1 className="text-4xl font-bold mb-4">{randomRecipe.title}</h1>
-          <p className="text-gray-600 mb-4">{randomRecipe.description}</p>
+          <h1 className="text-4xl font-bold mb-4">{title}</h1>
+          <p className="text-gray-600 mb-4">{snippet}</p>
           <Link
             href={`/Blog/${randomRecipe.category_id}`}
             className="bg-orange-500 text-white px-6 py-2 rounded-full inline-block hover:bg-orange-600"
