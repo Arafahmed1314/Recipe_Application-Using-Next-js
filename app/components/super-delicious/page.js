@@ -6,7 +6,7 @@ import data from '../../../public/data/recipes.json'
 import Link from "next/link";
 function SuperDelicious() {
   const sortedData = data.sort((a, b) =>
-    (b.rating?.rating_count || 0) - (a.rating?.rating_count || 0)
+    (b.rating?.average_rating || 0) - (a.rating?.average_rating || 0)
   );
   const firstThree = sortedData.slice(0, 3);
 
